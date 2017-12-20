@@ -1,0 +1,287 @@
+FORMAT: 1A
+HOST: http://arbitrage.apiblueprint.org/
+
+# phoenix-arbitrage
+
+Phoenix Arbitrage is an app to plan referees better and faster for hockey games.
+
+NOTE: This document is a **work in progress**.
+
+## Games Collection [/planning/api/v1/games{?start,end}]
+
++ Parameters
+    + start (date) - The date of the first gameday
+    + end (date) - The date of the last gameday
+    
+### List All Games [GET]
+
+Retrieve all games from Lisa
+
++ Response 200 (application/json)
+
+        {
+        "day": "2018-1-7",
+        "games": [
+          {
+            "tijd": "08:30 - 09:00",
+            "team": "JC4 zaal",
+            "tegenstander": "Zwaluwen Utrecht JC3",
+            "scheidsen": [],
+            "zaalleiding": "Zaalleiding Zwaluwen"
+          },
+          {
+            "tijd": "08:30 - 09:00",
+            "team": "MB4 zaal",
+            "tegenstander": "Hockey Club Zeewolde MB3",
+            "scheidsen": [
+              "Jojanne van Ee",
+              "Aaldrik Graat "
+            ],
+            "zaalleiding": ""
+          }
+        }
+
+## GameDays Collection [/planning/api/v1/gamedays]
+
+
+
+### List All GameDays [GET]
+
+    
++ Response 200 (application/json)
+
+        {
+          "days": [
+            "2018-1-6",
+            "2018-1-7",
+            "2018-1-13",
+            "2018-1-14",
+            "2018-1-20",
+            "2018-1-21"
+          ],
+          "niveau": [
+            "BONDS",
+            "TOP",
+            "BREEDTE",
+            "YUP",
+            "JEUGD"
+          ],
+          "teams": [
+            "JA1 zaal",
+            "JA12 zaal",
+            "JA2 zaal"
+            "JD12 zaal",
+            "JD2 zaal",
+            "JD3 zaal",
+            "JD4 zaal",
+            "Jongens A3",
+            "Jongens B1",
+            "Jongens B4",
+            "Jongens C3",
+            "Jongens C4"
+            "Meisjes C5"
+          ],
+          "playDays": [
+            {
+              "day": "2018-1-6",
+              "games": [
+                {
+                  "tijd": "08:30 - 09:00",
+                  "team": "MB6 zaal",
+                  "tegenstander": "VMHC Spitsbergen MB4",
+                  "scheidsen": [
+                    "Voornaam Achternaam",
+                    "Voornaam Achternaam"
+                  ],
+                  "zaalleiding": "",
+                  "startTijd": "09:00",
+                  "id": "0900MB6zaalVMHCSpitsbergenMB4",
+                  "shortName": "MB6Z",
+                  "niveau": "BREEDTE",
+                  "blokteams": [],
+                  "complete": true,
+                  "indoor": true
+                },
+                {
+                  "tijd": "09:40 - 09:40",
+                  "team": "ZAALBLOK",
+                  "tegenstander": "ZAAL Shinty MB5 - Spitsbergen MB4",
+                  "scheidsen": [
+                    "Voornaam Achternaam",
+                    "Voornaam Achternaam"
+                  ],
+                  "zaalleiding": "",
+                  "startTijd": "09:40",
+                  "id": "0940ZAALBLOKZAALShintyMB5SpitsbergenMB4",
+                  "shortName": "ZAALBLOK",
+                  "niveau": "ZAALBLOK",
+                  "blokteams": [
+                    "Shinty MB5",
+                    "Spitsbergen MB4"
+                  ],
+                  "complete": true,
+                  "indoor": true
+                },
+                {
+                  "tijd": "09:50 - 10:20",
+                  "team": "MB6 zaal",
+                  "tegenstander": "Driebergse Mixed Hockey Club Shinty MB5",
+                  "scheidsen": [
+                    "Voornaam Achternaam",
+                    "Voornaam Achternaam"
+                  ],
+                  "zaalleiding": "",
+                  "startTijd": "10:20",
+                  "id": "1020MB6zaalDriebergseMixedHockeyClubShintyMB5",
+                  "shortName": "MB6Z",
+                  "niveau": "BREEDTE",
+                  "blokteams": [],
+                  "complete": true,
+                  "indoor": true
+                }
+              ],
+              "available": {
+                "JEUGD": [],
+                "BONDS": [],
+                "ZAALBLOK": [],
+                "TOP": [
+                  {
+                    "naam": "Voornaam",
+                    "achternaam": "Achternaam",
+                    "status": "CS+",
+                    "extra info": "",
+                    "niveau": "TOP",
+                    "beschikbaarheid": "",
+                    "name": "Voornaam Achternaam",
+                    "id": "Voornaam_Achternaam",
+                    "assigned": []
+                  }
+                ]
+              },
+              "indoorBlocks": [
+                [
+                  {
+                    "tijd": "08:30 - 09:00",
+                    "team": "MB6 zaal",
+                    "tegenstander": "VMHC Spitsbergen MB4",
+                    "scheidsen": [
+                      "Voornaam Achternaam",
+                      "Voornaam Achternaam"
+                    ],
+                    "zaalleiding": "",
+                    "startTijd": "09:00",
+                    "id": "0900MB6zaalVMHCSpitsbergenMB4",
+                    "shortName": "MB6Z",
+                    "niveau": "BREEDTE",
+                    "blokteams": [],
+                    "complete": true,
+                    "indoor": true
+                  },
+                  {
+                    "tijd": "09:40 - 09:40",
+                    "team": "ZAALBLOK",
+                    "tegenstander": "ZAAL Shinty MB5 - Spitsbergen MB4",
+                    "scheidsen": [
+                      "Voornaam Achternaam",
+                      "Voornaam Achternaam"
+                    ],
+                    "zaalleiding": "",
+                    "startTijd": "09:40",
+                    "id": "0940ZAALBLOKZAALShintyMB5SpitsbergenMB4",
+                    "shortName": "ZAALBLOK",
+                    "niveau": "ZAALBLOK",
+                    "blokteams": [
+                      "Shinty MB5",
+                      "Spitsbergen MB4"
+                    ],
+                    "complete": true,
+                    "indoor": true
+                  },
+                  {
+                    "tijd": "09:50 - 10:20",
+                    "team": "MB6 zaal",
+                    "tegenstander": "Driebergse Mixed Hockey Club Shinty MB5",
+                    "scheidsen": [
+                      "Voornaam Achternaam",
+                      "Voornaam Achternaam"
+                    ],
+                    "zaalleiding": "",
+                    "startTijd": "10:20",
+                    "id": "1020MB6zaalDriebergseMixedHockeyClubShintyMB5",
+                    "shortName": "MB6Z",
+                    "niveau": "BREEDTE",
+                    "blokteams": [],
+                    "complete": true,
+                    "indoor": true
+                  }
+                ]
+              ],
+              "id": "2018-1-6",
+              "complete": true
+            }
+            ]
+        }
+
+## Teams Collection [/planning/api/v1/teams]
+
+### List All Teams [GET]
+
++ Response 200 (application/json)
+
+        {
+              "Jongens A1": "BONDS",
+              "MC1 zaal": "BONDS",
+              "Jongens A2": "TOP",
+              "Jongens A3": "BREEDTE",
+              "Jongens B3": "BREEDTE",
+              "Jongens C3": "YUP",
+              "Meisjes C3": "YUP",
+              "Jongens C4": "JEUGD",
+              "Jongens D4": "JEUGD"
+        }
+
+## Playing Teams Collection [/planning/api/v1/teams/playing]
+
+### List All Playing Teams [GET]
+
++ Response 200 (application/json)
+
+        [
+          "Dames 1",
+          "Dames 1 zaal",
+          "Dames 2 zaal",
+          "Dames 3 zaal",
+          "Dames 5",
+          "Dames 6 zaal"
+        ]
+## Supervisors Collection [/planning/api/v1/supervisors]
+
+### List All Supervisors [GET]
+
++ Response 200 (application/json)
+
+        [
+          {
+            "role": "Coach",
+            "supervisors": [
+              {
+                "team": "TX1",
+                "memberNumber": "4321",
+                "name": "Voornaam Achternaam"
+              },
+              {
+                "team": "TX2",
+                "memberNumber": "4321",
+                "name": "Voornaam Achternaam"
+              },
+              {
+                "team": "D1 Z",
+                "memberNumber": "12345",
+                "name": "Voornaam Achternaam"
+              },
+              {
+                "team": "D01",
+                "memberNumber": "12345",
+                "name": "Voornaam Achternaam"
+              }
+        ]
